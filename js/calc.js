@@ -1,23 +1,27 @@
 $(function () {
-  const btnConvert = '#btnConvert'
-  const editMilhas = '#editMilhas'
+  const btn_convert = '#btnConvert'
+  const edit_milhas = '#editMilhas'
+  const edit_metros = '#editMetros'
 
   //only numbers
-  $(editMilhas).keyup(() => {
-    $(editMilhas).val($(editMilhas).val().replace(/[^0-9]/g, ''))
+  $(edit_milhas).keyup(() => {
+    $(edit_milhas).val($(edit_milhas).val().replace(/[^0-9]/g, ''))
   })
 
-  $('#btnConvert').click(() => {
-    const milhas = parseFloat($(editMilhas).val())
+  //click button
+  $(btn_convert).click(() => {
+    const milhas = parseFloat($(edit_milhas).val())
 
+    //validation
     if (isNaN(milhas)) {
-      $(editMilhas).focus()
-      $(editMilhas).next().addClass('form-text error')
-      return 
-    } 
+      $(edit_milhas).focus()
+      $(edit_milhas).next().addClass('form-text error')
+      $(edit_metros).val('')
+      return
+    }
 
+    //calc
     const metros = milhas * 1609.34
-    $('#editMetros').val((metros.toFixed(2).toString().replace('.', ',')))
-    console.log('end click');
+    $(edit_metros).val((metros.toFixed(2).toString().replace('.', ',')))
   })
 })
