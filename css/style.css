@@ -67,8 +67,19 @@ body {
   right: 1%;
   top: -10px;
   padding: .9em;
-  background: url(../image/change.svg) #007bff no-repeat;
+  background-image: url(../image/change.svg);
+  background-repeat: no-repeat;
+  background-color: #007bff;
   border: none;
+}
+
+.main form .btnChange:hover {
+  cursor: pointer;
+  background-color: #0062cc;
+}
+
+.main form .btnChange:active {
+  background-image: url(../image/change.svg) !important;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300, 400,700');
