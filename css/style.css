@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: pink;
+}
+
+.main {
+  font-family: 'Raleway', sans-serif;
+  background-color: orange;
+  width: 100%;
+  max-width: 400px;
+  padding: 2em 1em;
+}
+
+/* titles */
+.main h1 {
+  font-weight: 400;
+}
+
+.main h1,
+.main p {
+  text-align: center;
+}
+
+/* form */
+.main form .text-danger {
+  opacity: 0;
+  transition: all 300ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  font-weight: 700;
+}
+
+.main form .text-danger.error {
+  opacity: 1;
+}
+
+.main form .form-group:first-of-type {
+  margin-bottom: 0;
+}
+
+.main form button {
+  margin: 0 auto;
+  display: block;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
