@@ -55,13 +55,14 @@ body {
   position: relative;
 }
 
+/* button convert */
 .main form button {
   display: block;
   margin: 0 auto;
   font-weight: 700;
 }
 
-/* bt change */
+/* button change */
 .main form .btnChange {
   position: absolute;
   right: 1%;
