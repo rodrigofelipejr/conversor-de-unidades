@@ -12,11 +12,16 @@ $(function () {
     }
   })
 
+  //clean the second input on the output of the first
+  $(edit_milhas).blur(() => {
+    if ($(edit_milhas).val().length === 0) { $(edit_metros).val('') }
+  })
+
   //hide validation
   const hideError = () => {
     $(edit_milhas).next().removeClass('error')
   }
-  
+
   //click button
   $(btn_convert).click(() => {
     const milhas = parseFloat($(edit_milhas).val())
