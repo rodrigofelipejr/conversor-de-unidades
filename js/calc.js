@@ -12,6 +12,11 @@ $(function () {
     }
   })
 
+  //hide validation
+  const hideError = () => {
+    $(edit_milhas).next().removeClass('error')
+  }
+  
   //click button
   $(btn_convert).click(() => {
     const milhas = parseFloat($(edit_milhas).val())
@@ -21,6 +26,7 @@ $(function () {
       $(edit_milhas).focus()
       $(edit_milhas).next().addClass('error')
       $(edit_metros).val('')
+      setTimeout(hideError, 3000)
       return
     }
 
