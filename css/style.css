@@ -9,20 +9,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: pink;
+  background-color: #fdfdfd;
+  color: #263646;
 }
 
 .main {
-  font-family: 'Raleway', sans-serif;
-  background-color: orange;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
-  padding: 2em 1em;
+  padding: 2em 2em;
+  background-color: #fff;
+  border: 1px solid #d1dae0;
+  border-radius: 5%;
 }
 
 /* titles */
 .main h1 {
-  font-weight: 400;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
 }
 
 .main h1,
@@ -47,9 +50,10 @@ body {
 }
 
 .main form button {
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  font-weight: 700; 
 }
+ 
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300, 400,700');
