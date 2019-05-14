@@ -51,10 +51,24 @@ body {
   margin-bottom: 0;
 }
 
+.main form .form-group:last-of-type {
+  position: relative;
+}
+
 .main form button {
   display: block;
   margin: 0 auto;
   font-weight: 700;
+}
+
+/* bt change */
+.main form .btnChange {
+  position: absolute;
+  right: 1%;
+  top: -10px;
+  padding: .9em;
+  background: url(../image/change.svg) #007bff no-repeat;
+  border: none;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300, 400,700');
