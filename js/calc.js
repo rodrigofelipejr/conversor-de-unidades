@@ -6,6 +6,10 @@ $(function () {
   //only numbers
   $(edit_milhas).keyup(() => {
     $(edit_milhas).val($(edit_milhas).val().replace(/[^0-9]/g, ''))
+
+    if ($(edit_milhas).val().length > 0) {
+      $(edit_milhas).next().removeClass('error')
+    }
   })
 
   //click button
@@ -15,7 +19,7 @@ $(function () {
     //validation
     if (isNaN(milhas)) {
       $(edit_milhas).focus()
-      $(edit_milhas).next().addClass('form-text error')
+      $(edit_milhas).next().addClass('error')
       $(edit_metros).val('')
       return
     }
