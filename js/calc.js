@@ -3,7 +3,7 @@ $(function () {
   main();
 
   // button change
-  fnChangeForm()
+  fnChangeElements()
 
   // format form
   fnRebuildingForm()
@@ -60,14 +60,15 @@ const main = () => {
     }
 
     // conversion calculates 
+    let toFixed = (edit_first_Id === 'editMilhas') ? 2 : 5 
     let resultValue = (edit_first_Id === 'editMilhas') ? inputValue * 1609.34 : inputValue / 1609.34
 
     // setting the result
-    $(edit_second).val((resultValue.toFixed(2).toString().replace('.', ',')))
+    $(edit_second).val((resultValue.toFixed(toFixed).toString().replace('.', ',')))
   })
 }
 
-const fnChangeForm = () => {
+const fnChangeElements = () => {
   $(document).on('click', '.btn.btnChange', () => {
     // getting form
     elementForm = document.querySelector('form')
