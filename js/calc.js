@@ -10,8 +10,6 @@ $(function () {
 })
 
 const main = () => {
-  console.clear()
-
   let edit_first_Id = document.querySelector('form .form-group:nth-of-type(1) input[type="text"]').id
   let edit_first = '#editMilhas'
   let edit_second = '#editMetros'
@@ -20,9 +18,6 @@ const main = () => {
     edit_first = '#editMetros'
     edit_second = '#editMilhas'
   }
-
-  console.log(`edit_first ${edit_first}`);
-  console.log(`edit_second ${edit_second}`);
 
   // enter only numbers
   $(edit_first).keyup(() => {
@@ -40,17 +35,21 @@ const main = () => {
     }
   })
 
-  // ===========================
-  // conversion
-  // ================
+  // conversion 
   $('#btnConvert').click(() => {
     const inputValue = parseFloat($(edit_first).val())
+
+    console.log(`edit_first ${edit_first}`);
+    console.log(`inputValue ${inputValue}`);
 
     // validation for null value
     if (isNaN(inputValue)) {
       $(edit_first).focus()
       $(edit_first).next().addClass('error')
       $(edit_second).val('')
+
+      const date = new Date()
+      console.log(date.getMilliseconds());
 
       // hide validation
       setTimeout(() => {
@@ -66,19 +65,6 @@ const main = () => {
     // setting the result
     $(edit_second).val((resultValue.toFixed(2).toString().replace('.', ',')))
   })
-}
-
-const fnRebuildingForm = () => {
-  // creating selectors
-  const firstElement = 'form .form-group:nth-of-type(1) input[type="text"]'
-  const secondElement = 'form .form-group:nth-of-type(2) input[type="text"]'
-
-  // enabling and disabling elements
-  document.querySelector(firstElement).removeAttribute('readonly')
-  document.querySelector(firstElement).value = ''
-
-  document.querySelector(secondElement).setAttribute('readonly', '')
-  document.querySelector(secondElement).value = ''
 }
 
 const fnChangeForm = () => {
@@ -104,8 +90,30 @@ const fnChangeForm = () => {
     elementForm.insertBefore(secondElementHTML, document.querySelector(firstSelector) || null)
     elementForm.insertBefore(firstElementHTML, document.querySelector(secondSelector) || null)
 
+    // hide validation
+    const elementValidation = document.querySelectorAll('small.error')
+    if (elementValidation[0]) {
+      elementValidation[0].classList.remove('error')
+    }
+
+    // clear event handler
+    $("#btnConvert").unbind("click");
+
     // rearranging form
     fnRebuildingForm()
     main()
   })
+}
+
+const fnRebuildingForm = () => {
+  // creating selectors
+  const firstElement = 'form .form-group:nth-of-type(1) input[type="text"]'
+  const secondElement = 'form .form-group:nth-of-type(2) input[type="text"]'
+
+  // enabling and disabling elements
+  document.querySelector(firstElement).removeAttribute('readonly')
+  document.querySelector(firstElement).value = ''
+
+  document.querySelector(secondElement).setAttribute('readonly', '')
+  document.querySelector(secondElement).value = ''
 }
