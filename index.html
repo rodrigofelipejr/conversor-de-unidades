@@ -27,6 +27,9 @@
 
     <form autocomplete="off">
       <div class="form-group">
+         <!--  -->
+         <button type="button" class="btn btnChange"></button>
+         <!--  -->
         <label for="editMilhas">Distância em Milhas</label>
         <input type="text" class="form-control" id="editMilhas" placeholder="Milhas">
         <small class="form-text text-danger">Informe um valor em milhas</small>
@@ -36,10 +39,12 @@
         <button type="button" class="btn btnChange"></button>
         <!--  -->
         <label for="editMetros">Distância em Metros</label>
-        <input type="text" class="form-control" id="editMetros" placeholder="Metros" readonly>
+        <input type="text" class="form-control" id="editMetros" placeholder="Metros">
         <small class="form-text text-danger">Informe um valor em metros</small>
       </div>
-      <button type="button" id="btnConvert" class="btn btn-primary">Converter</button>
+      <div class="form-group">
+        <button type="button" id="btnConvert" class="btn btn-primary">Converter</button>
+      </div>
     </form>
   </section>
 
